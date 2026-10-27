@@ -1,0 +1,577 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SIWS College of Science | Education for Excellence</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #092b52;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo h1 {
+            font-size: 25px;
+            letter-spacing: 1px;
+        }
+
+        .logo p {
+            color: #cbdaf0;
+            font-size: 12px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffc857;
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+            min-height: 480px;
+            background:
+                linear-gradient(rgba(4, 28, 57, 0.78),
+                rgba(4, 28, 57, 0.78)),
+                url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=85");
+
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 50px 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h2 {
+            font-size: 46px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 28px;
+            color: #edf3ff;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ffc857;
+            color: #092b52;
+            padding: 13px 27px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 65px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: #092b52;
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 35px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .about img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px #00000015;
+        }
+
+        .about h3 {
+            color: #092b52;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .about p {
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        /* COURSES */
+
+        .courses {
+            background: #eaf0f8;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            padding: 28px 22px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px #0000000b;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px #092b5220;
+        }
+
+        .card .icon {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            color: #092b52;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* FACILITIES */
+
+        .facilities {
+            background: white;
+        }
+
+        /* CAMPUS GALLERY */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: #eaf0f8;
+        }
+
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px #0000000b;
+        }
+
+        .contact-box p {
+            margin: 14px 0;
+            color: #444;
+        }
+
+        .contact-box strong {
+            color: #092b52;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #092b52;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        footer p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        /* MOBILE RESPONSIVE DESIGN */
+
+        @media (max-width: 800px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .hero h2 {
+                font-size: 34px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .card-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .logo h1 {
+                font-size: 21px;
+            }
+
+            nav {
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .hero h2 {
+                font-size: 29px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            section {
+                padding: 45px 5%;
+            }
+
+            .section-title {
+                font-size: 27px;
+            }
+
+            .card-container,
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery img {
+                height: 230px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <h1>SIWS COLLEGE</h1>
+            <p>College of Science | Learning for a Better Future</p>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#courses">Courses</a>
+            <a href="#facilities">Facilities</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HOME -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Welcome to SIWS College of Science</h2>
+
+            <p>
+                Discover your potential, develop your knowledge,
+                and build a brighter future through education.
+            </p>
+
+            <a href="#about" class="btn">Explore Our College</a>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <h2 class="section-title">About Our College</h2>
+
+        <p class="section-subtitle">
+            A place to learn, explore, and grow.
+        </p>
+
+        <div class="about">
+            <div>
+                <h3>Education Beyond the Classroom</h3>
+
+                <p>
+                    Welcome to the SIWS College of Science website.
+                    This website introduces our college, its academic
+                    opportunities, campus facilities, and student life.
+                </p>
+
+                <p>
+                    Our goal is to create a learning environment where
+                    students can develop their knowledge, discover
+                    their interests, and prepare for future opportunities.
+                </p>
+
+                <p>
+                    Explore this website to learn more about our
+                    courses, facilities, and campus.
+                </p>
+            </div>
+
+            <div>
+                <img
+                    src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=85"
+                    alt="Students on a college campus">
+            </div>
+        </div>
+    </section>
+
+    <!-- COURSES -->
+    <section class="courses" id="courses">
+        <h2 class="section-title">Our Courses</h2>
+
+        <p class="section-subtitle">
+            Explore academic opportunities.
+        </p>
+
+        <div class="card-container">
+
+            <div class="card">
+                <div class="icon">🔬</div>
+                <h3>Science</h3>
+                <p>
+                    Explore scientific concepts, experiments,
+                    and discoveries.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">💻</div>
+                <h3>Computer Science</h3>
+                <p>
+                    Learn about computing, programming,
+                    and modern technology.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">📊</div>
+                <h3>Information Technology</h3>
+                <p>
+                    Discover digital systems, information,
+                    and technology.
+                </p>
+            </div>
+
+        </div>
+
+        <p style="text-align:center; margin-top:25px; color:#555;">
+            Note: Confirm the actual courses offered by the college
+            before publishing this website.
+        </p>
+    </section>
+
+    <!-- FACILITIES -->
+    <section class="facilities" id="facilities">
+        <h2 class="section-title">Campus Facilities</h2>
+
+        <p class="section-subtitle">
+            Facilities that support learning and student development.
+        </p>
+
+        <div class="card-container">
+
+            <div class="card">
+                <div class="icon">📚</div>
+                <h3>Library</h3>
+                <p>
+                    A learning space for reading, studying,
+                    and exploring knowledge.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🧪</div>
+                <h3>Laboratories</h3>
+                <p>
+                    Practical learning through scientific
+                    experiments and activities.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🏫</div>
+                <h3>Classrooms</h3>
+                <p>
+                    Spaces for learning, discussion,
+                    and academic activities.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+        <h2 class="section-title">Campus Gallery</h2>
+
+        <p class="section-subtitle">
+            A glimpse of college life.
+        </p>
+
+        <div class="gallery">
+            <img
+                src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80"
+                alt="University building">
+
+            <img
+                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80"
+                alt="Students at a campus">
+
+            <img
+                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80"
+                alt="Classroom learning">
+
+            <img
+                src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=800&q=80"
+                alt="Library interior">
+
+            <img
+                src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=80"
+                alt="Educational building">
+
+            <img
+                src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80"
+                alt="Students studying">
+        </div>
+
+        <p style="text-align:center; margin-top:20px; color:#666;">
+            These are sample images. Replace them with actual
+            SIWS College photographs for an authentic website.
+        </p>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+
+        <p class="section-subtitle">
+            Get in touch with our college.
+        </p>
+
+        <div class="contact-box">
+            <p>
+                <strong>College:</strong>
+                SIWS College of Science
+            </p>
+
+            <p>
+                <strong>Address:</strong>
+                Add the verified college address here.
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                Add the official college email here.
+            </p>
+
+            <p>
+                <strong>Phone:</strong>
+                Add the official college contact number here.
+            </p>
+
+            <p>
+                <strong>Website Project:</strong>
+                Designed by a student as an educational project.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 SIWS College Website Project</p>
+        <p>Designed with HTML and CSS</p>
+        <p>Learning Today, Leading Tomorrow.</p>
+    </footer>
+
+</body>
+</html>
+```
